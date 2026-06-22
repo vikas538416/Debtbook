@@ -1,5 +1,4 @@
 function DebtorCard({
-<<<<<<< HEAD
     name,amount
 }) {
     return (
@@ -9,7 +8,6 @@ function DebtorCard({
         </div>
     );
 }
-=======
 
     name,
 
@@ -39,5 +37,4 @@ function DebtorCard({
 
 }
 
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 export default DebtorCard;
