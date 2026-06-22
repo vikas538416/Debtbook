@@ -67,6 +67,13 @@ app = Flask(__name__)
 
 CORS(app)
 
+@app.route("/")
+def home():
+    return {
+        "status": "success",
+        "message": "DebtBook API Running"
+    }
+
 app.register_blueprint(health_bp)
 
 app.register_blueprint(auth_bp)
