@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 function Login() {
-<<<<<<< HEAD
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const handleLogin =
@@ -9,7 +8,7 @@ function Login() {
             try{
                 const response =
                     await fetch(
-                        "http://127.0.0.1:5000/login",
+                        `${import.meta.env.VITE_API_URL}/login`,
                         {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
@@ -43,7 +42,6 @@ function Login() {
         </div>
     );
 }
-=======
 
     const [email, setEmail] =
         useState("");
@@ -54,7 +52,7 @@ function Login() {
 
             const response =
                 await fetch(
-                    "http://127.0.0.1:5000/login",
+                    `${import.meta.env.VITE_API_URL}/login`,
                     {
                         method: "POST",
 
@@ -134,5 +132,4 @@ function Login() {
     );
 }
 
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 export default Login;
