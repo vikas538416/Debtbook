@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 function AddPerson() {
-<<<<<<< HEAD
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [reminderDate,setReminderDate] =useState("");
@@ -18,7 +17,7 @@ function AddPerson() {
             try{
                 const response =
                     await fetch(
-                        "http://127.0.0.1:5000/people",
+                        `${import.meta.env.VITE_API_URL}/people`,
                         {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
@@ -53,7 +52,6 @@ function AddPerson() {
         </div>
     );
 }
-=======
 
     const [name, setName] =
         useState("");
@@ -162,5 +160,4 @@ function AddPerson() {
     );
 }
 
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 export default AddPerson;
