@@ -2,10 +2,9 @@ function Backup() {
 
     const createBackup =
         async () => {
-<<<<<<< HEAD
             try{
                 const response =
-                    await fetch("http://127.0.0.1:5000/backup"
+                    await fetch(`${import.meta.env.VITE_API_URL}/backup`
                     );
                 const data =
                     await response.json();
@@ -29,9 +28,8 @@ function Backup() {
                 console.log(error);
                 alert("Server Error")
             }
-=======
             const response =
-                await fetch(    "http://127.0.0.1:5000/backup"
+                await fetch(    `${import.meta.env.VITE_API_URL}/backup`
                 );
             const data =
                 await response.json();
@@ -44,7 +42,6 @@ function Backup() {
                 );
             const data = await response.json();
             alert( "Backup Restored");
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
         };
     return (
         <div>
