@@ -1,6 +1,5 @@
 function Navbar() {
     const logout = () => {
-<<<<<<< HEAD
         localStorage.removeItem("token");
         window.location.href ="/login";
     };
@@ -10,7 +9,6 @@ function Navbar() {
         </div>
     );
 }
-=======
         localStorage.removeItem(
             "token"
         );
@@ -26,5 +24,4 @@ function Navbar() {
     );
 }
 
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 export default Navbar;
