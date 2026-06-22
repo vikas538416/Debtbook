@@ -3,14 +3,12 @@ import { useEffect, useState } from "react";
 import TransactionCard from "../components/TransactionCard";
 
 function TransactionList({ personId }) {
-<<<<<<< HEAD
     const [transactions, setTransactions] = useState([]);
     const [filter, setFilter] = useState("ALL");
     const [date,setDate] =useState("");
     const formatDate = (dateString) => {
         return new Date( dateString
         ).toLocaleDateString("en-IN",
-=======
 
     const [transactions, setTransactions] =
         useState([]);
@@ -26,7 +24,6 @@ function TransactionList({ personId }) {
             dateString
         ).toLocaleDateString(
             "en-IN",
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
             {
                 day: "numeric",
                 month: "short",
@@ -34,7 +31,6 @@ function TransactionList({ personId }) {
             }
         );
     };
-<<<<<<< HEAD
     useEffect(() => {
         fetch(
             `http://127.0.0.1:5000/transactions/${personId}`
@@ -71,12 +67,11 @@ function TransactionList({ personId }) {
                     .filter(transaction => {
                         if (filter === "ALL") {
                             return true;}
-=======
 
     useEffect(() => {
 
         fetch(
-            `http://127.0.0.1:5000/transactions/${personId}`
+            `${import.meta.env.VITE_API_URL}/transactions/${personId}`
         )
             .then(response => response.json())
             .then(data => setTransactions(data));
@@ -159,12 +154,10 @@ function TransactionList({ personId }) {
                             return true;
                         }
 
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
                         return (
                             transaction.type
                             === filter
                         );
-<<<<<<< HEAD
                     })
                     .map(transaction => (
                         <div key={transaction.id}>
@@ -180,7 +173,6 @@ function TransactionList({ personId }) {
         </div>
     );
 }
-=======
 
                     })
 
@@ -217,5 +209,4 @@ function TransactionList({ personId }) {
     );
 }
 
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 export default TransactionList;
