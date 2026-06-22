@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from dotenv import load_dotenv
 import os
 
@@ -28,9 +27,6 @@ from Debtbook.backend.routes.report_routes import report_bp
 from Debtbook.backend.routes.backup_routes import backup_bp
 
 from Debtbook.backend.routes.search_routes import search_bp
-=======
-from flask import Flask
-from flask_cors import CORS
 
 from routes.health_routes import health_bp
 
@@ -55,7 +51,6 @@ from routes.report_routes import report_bp
 from routes.backup_routes import backup_bp
 
 from routes.search_routes import search_bp
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 
 conn = get_connection()
 create_user_table(conn)
@@ -90,7 +85,6 @@ app.register_blueprint(report_bp)
 
 app.register_blueprint(search_bp)
 
-<<<<<<< HEAD
 
 
 
@@ -102,10 +96,5 @@ print(DATABASE_URL)
 if __name__ == "__main__":
     app.run(
         host = "0.0.0.0",
-=======
-if __name__ == "__main__":
-    app.run(
-        debug=True,
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
         port=5000
     )
