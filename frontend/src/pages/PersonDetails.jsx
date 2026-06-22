@@ -16,7 +16,7 @@ function PersonDetails() {
     const [balance,setBalance] = useState(null);
     useEffect(() => {
         fetch(
-            `http://127.0.0.1:5000/balance/${id}`)
+            `${import.meta.env.VITE_API_URL}/balance/${id}`)
             .then(response =>response.json())
             .then(data => setBalance(data) );
     }, [id]);
