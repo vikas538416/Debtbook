@@ -7,8 +7,6 @@ def create_people_table(conn):
         CREATE TABLE IF NOT EXISTS people(
             id SERIAL
             PRIMARY KEY ,
-            id INTEGER
-            PRIMARY KEY AUTOINCREMENT,
             user_id INTEGER
             NOT NULL,
             name TEXT
