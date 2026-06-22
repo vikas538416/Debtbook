@@ -1,20 +1,9 @@
 function Navbar() {
     const logout = () => {
         localStorage.removeItem("token");
-        window.location.href ="/login";
+        window.location.href = "/login";
     };
-    return (
-        <div>
-            <button onClick={logout}>Logout</button>
-        </div>
-    );
-}
-        localStorage.removeItem(
-            "token"
-        );
-        window.location.href =
-            "/login";
-    };
+
     return (
         <div>
             <button onClick={logout}>

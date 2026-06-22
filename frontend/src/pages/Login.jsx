@@ -86,7 +86,7 @@ function Login() {
                     data.message
                 );
             }
-        };
+        
 
     return (
 
