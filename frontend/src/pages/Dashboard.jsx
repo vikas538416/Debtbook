@@ -9,12 +9,10 @@ import AddPerson from "./AddPerson";
 import PeopleList from "./PeopleList";
 
 function Dashboard() {
-<<<<<<< HEAD
     const [summary, setSummary] = useState(null);
     const [alerts, setAlerts] = useState([]);
     const [debtors, setDebtors] = useState([]);
     useEffect(() => {
-=======
 
     const [summary, setSummary] = useState(null);
 
@@ -24,31 +22,23 @@ function Dashboard() {
 
     useEffect(() => {
 
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
         fetch(
-            "http://127.0.0.1:5000/dashboard-summary"
+            `${import.meta.env.VITE_API_URL}/dashboard-summary`
         )
             .then(response => response.json())
             .then(data => setSummary(data));
-<<<<<<< HEAD
-=======
 
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
         fetch(
             "http://127.0.0.1:5000/dashboard-alerts"
         )
             .then(response => response.json())
             .then(data => setAlerts(data));
-<<<<<<< HEAD
-=======
 
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
         fetch(
             "http://127.0.0.1:5000/top-debtors"
         )
             .then(response => response.json())
             .then(data => setDebtors(data));
-<<<<<<< HEAD
     }, []);
     return (
         <div><Navbar />
@@ -79,7 +69,6 @@ function Dashboard() {
         </div>
     );
 }
-=======
 
     }, []);
 
@@ -160,5 +149,4 @@ function Dashboard() {
     );
 }
 
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 export default Dashboard;
