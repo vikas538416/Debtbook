@@ -1,7 +1,11 @@
 from flask import Blueprint
 from flask import jsonify
 
+<<<<<<< HEAD
 from Debtbook.backend.config.database import get_connection
+=======
+from config.database import get_connection
+>>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 
 from datetime import date
 
@@ -188,7 +192,11 @@ def overdue():
 
         FROM people
 
+<<<<<<< HEAD
         WHERE reminder_date < %s
+=======
+        WHERE reminder_date < ?
+>>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
         """,
         (today,)
     )

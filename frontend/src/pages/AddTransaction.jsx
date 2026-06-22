@@ -3,6 +3,7 @@ import { useState } from "react";
 function AddTransaction({
     personId
 }) {
+<<<<<<< HEAD
     const [amount, setAmount] = useState("");
     const [note, setNote] = useState("");
     const [type, setType] = useState("BORROW");
@@ -38,6 +39,38 @@ function AddTransaction({
     return (
         <div>
             <h2>Add Borrow Entry</h2>
+=======
+    const [amount, setAmount] =
+        useState("");
+    const [note, setNote] =
+        useState("");
+    const [type, setType] =
+        useState("BORROW");
+        const saveTransaction =
+        async () => {
+            const response =
+                await fetch(
+                    "http://127.0.0.1:5000/transactions",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            person_id:personId,
+                            amount,note,type
+                        })
+                    }
+                );
+            const data =await response.json();
+            alert(data.message);
+        };
+    return (
+        <div>
+            <h2>
+                Add Borrow Entry
+            </h2>
+>>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
             <input
                 placeholder="Amount"
                 onChange={(e) =>

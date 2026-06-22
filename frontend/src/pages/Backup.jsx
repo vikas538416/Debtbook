@@ -2,6 +2,7 @@ function Backup() {
 
     const createBackup =
         async () => {
+<<<<<<< HEAD
             try{
                 const response =
                     await fetch("http://127.0.0.1:5000/backup"
@@ -28,6 +29,22 @@ function Backup() {
                 console.log(error);
                 alert("Server Error")
             }
+=======
+            const response =
+                await fetch(    "http://127.0.0.1:5000/backup"
+                );
+            const data =
+                await response.json();
+            alert( "Backup Created");
+        };
+    const restoreBackup =
+        async () => {
+            const response = await fetch(
+            "http://127.0.0.1:5000/restore"
+                );
+            const data = await response.json();
+            alert( "Backup Restored");
+>>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
         };
     return (
         <div>

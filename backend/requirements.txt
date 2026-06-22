@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 accelerate==1.13.0
 aiohappyeyeballs==2.6.1
 aiohttp==3.13.5
@@ -240,3 +241,7 @@ xxhash==3.7.0
 yarl==1.23.0
 zipp==3.23.0
 zope.interface==8.4
+=======
+flask
+flask-cors
+>>>>>>> 61108bc051646086413a5603c7e795890ca47c7e

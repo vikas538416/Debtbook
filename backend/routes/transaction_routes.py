@@ -2,7 +2,11 @@ from flask import Blueprint
 from flask import request
 from flask import jsonify
 
+<<<<<<< HEAD
 from Debtbook.backend.config.database import get_connection
+=======
+from config.database import get_connection
+>>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 
 transaction_bp = Blueprint(
     "transaction",
@@ -38,7 +42,11 @@ def add_transaction():
             type,
             note
         )
+<<<<<<< HEAD
         VALUES(%s,%s,%s,%s)
+=======
+        VALUES(?,?,?,?)
+>>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
         """,
         (
             person_id,
@@ -82,7 +90,11 @@ def get_transactions(person_id):
 
         FROM transactions
 
+<<<<<<< HEAD
         WHERE person_id=%s
+=======
+        WHERE person_id=?
+>>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 
         ORDER BY id DESC
         """,
@@ -127,7 +139,11 @@ def get_balance(person_id):
         amount,
         type
         FROM transactions
+<<<<<<< HEAD
         WHERE person_id=%s
+=======
+        WHERE person_id=?
+>>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
         """,
         (person_id,)
     )

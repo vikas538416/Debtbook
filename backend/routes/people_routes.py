@@ -2,7 +2,11 @@ from flask import Blueprint
 from flask import request
 from flask import jsonify
 
+<<<<<<< HEAD
 from Debtbook.backend.config.database import get_connection
+=======
+from config.database import get_connection
+>>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 
 people_bp = Blueprint(
     "people",
@@ -108,7 +112,11 @@ def get_person(person_id):
         name,
         phone
         FROM people
+<<<<<<< HEAD
         WHERE id=%s
+=======
+        WHERE id=?
+>>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
         """,
         (person_id,)
     )
