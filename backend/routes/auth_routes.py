@@ -117,7 +117,7 @@ def login():
             email,
             password
         )
-    )
+    
 
     user = cursor.fetchone()
 
