@@ -1,6 +1,5 @@
 function AlertCard({
 
-<<<<<<< HEAD
     title,children
 }) {
     return (
@@ -15,7 +14,7 @@ function AlertCard({
         </div>
     );
 }
-=======
+
     title,
 
     children
@@ -54,5 +53,4 @@ function AlertCard({
 
 }
 
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 export default AlertCard;
