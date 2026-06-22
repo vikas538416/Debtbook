@@ -118,7 +118,6 @@ def login():
             password
         )
     
-
     user = cursor.fetchone()
 
     conn.close()
