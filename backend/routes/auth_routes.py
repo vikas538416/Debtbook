@@ -38,9 +38,6 @@ def register():
 
         INSERT INTO users(name,email,password) VALUES(%s,%s,%s)
         """,(name,email,hashed_password))
-
-        INSERT INTO users(name,email,password) VALUES(?,?,?)
-        """,(name,email,password))
         conn.commit()
 
         return jsonify({
