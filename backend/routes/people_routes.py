@@ -2,29 +2,30 @@ from flask import Blueprint
 from flask import request
 from flask import jsonify
 
-<<<<<<< HEAD
-from Debtbook.backend.config.database import get_connection
-=======
 from config.database import get_connection
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 
 people_bp = Blueprint(
     "people",
     __name__
 )
 
+
 @people_bp.route(
     "/people",
     methods=["POST"]
 )
 def add_person():
+
     data = request.get_json()
+
     user_id = data["user_id"]
     name = data["name"]
     phone = data["phone"]
     reminder_date = data["reminder_date"]
+
     conn = get_connection()
     cursor = conn.cursor()
+
     cursor.execute(
         """
         INSERT INTO people
@@ -34,7 +35,7 @@ def add_person():
             phone,
             reminder_date
         )
-        VALUES(?,?,?,?)
+        VALUES (%s, %s, %s, %s)
         """,
         (
             user_id,
@@ -43,12 +44,13 @@ def add_person():
             reminder_date
         )
     )
+
     conn.commit()
     conn.close()
+
     return jsonify({
         "success": True,
-        "message":
-        "Person Added Successfully"
+        "message": "Person Added Successfully"
     })
 
 
@@ -59,15 +61,14 @@ def add_person():
 def get_people():
 
     conn = get_connection()
-
     cursor = conn.cursor()
 
     cursor.execute(
         """
         SELECT
-        id,
-        name,
-        phone
+            id,
+            name,
+            phone
         FROM people
         """
     )
@@ -79,20 +80,13 @@ def get_people():
     result = []
 
     for person in people:
-
         result.append({
-
             "id": person[0],
-
             "name": person[1],
-
             "phone": person[2]
-
         })
 
     return jsonify(result)
-
-
 
 
 @people_bp.route(
@@ -102,21 +96,16 @@ def get_people():
 def get_person(person_id):
 
     conn = get_connection()
-
     cursor = conn.cursor()
 
     cursor.execute(
         """
         SELECT
-        id,
-        name,
-        phone
+            id,
+            name,
+            phone
         FROM people
-<<<<<<< HEAD
-        WHERE id=%s
-=======
-        WHERE id=?
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
+        WHERE id = %s
         """,
         (person_id,)
     )
@@ -126,68 +115,50 @@ def get_person(person_id):
     conn.close()
 
     if person:
-
         return jsonify({
-
             "id": person[0],
-
             "name": person[1],
-
             "phone": person[2]
-
         })
 
     return jsonify({
-        "message":
-        "Person Not Found"
-    })
-
+        "message": "Person Not Found"
+    }), 404
 
 
 @people_bp.route(
-    "/reminders"
+    "/reminders",
+    methods=["GET"]
 )
 def reminders():
 
     conn = get_connection()
-
     cursor = conn.cursor()
 
     cursor.execute(
         """
         SELECT
-
-        id,
-        name,
-        phone,
-        reminder_date
-
+            id,
+            name,
+            phone,
+            reminder_date
         FROM people
-
-        WHERE reminder_date
-        IS NOT NULL
+        WHERE reminder_date IS NOT NULL
         """
     )
 
-    rows =cursor.fetchall()
+    rows = cursor.fetchall()
 
     conn.close()
 
     result = []
 
     for row in rows:
-
         result.append({
-
             "id": row[0],
-
             "name": row[1],
-
             "phone": row[2],
-
-            "reminder_date":
-            row[3]
-
+            "reminder_date": row[3]
         })
 
     return jsonify(result)
