@@ -3,7 +3,6 @@ import { useState } from "react";
 function AddTransaction({
     personId
 }) {
-<<<<<<< HEAD
     const [amount, setAmount] = useState("");
     const [note, setNote] = useState("");
     const [type, setType] = useState("BORROW");
@@ -16,7 +15,7 @@ function AddTransaction({
             try{
                 const response =
                     await fetch(
-                        "http://127.0.0.1:5000/transactions",
+                            `${import.meta.env.VITE_API_URL}/transactions`,
                         {
                             method: "POST",
                             headers: {
@@ -39,7 +38,6 @@ function AddTransaction({
     return (
         <div>
             <h2>Add Borrow Entry</h2>
-=======
     const [amount, setAmount] =
         useState("");
     const [note, setNote] =
@@ -50,7 +48,7 @@ function AddTransaction({
         async () => {
             const response =
                 await fetch(
-                    "http://127.0.0.1:5000/transactions",
+                    `${import.meta.env.VITE_API_URL}/transactions`,
                     {
                         method: "POST",
                         headers: {
@@ -70,7 +68,6 @@ function AddTransaction({
             <h2>
                 Add Borrow Entry
             </h2>
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
             <input
                 placeholder="Amount"
                 onChange={(e) =>
