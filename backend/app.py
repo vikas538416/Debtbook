@@ -4,29 +4,29 @@ import os
 from flask import Flask
 from flask_cors import CORS
 
-from backend.routes.health_routes import health_bp
+from routes.health_routes import health_bp
 
-from backend.config.database import get_connection
-from backend.models.user_model import create_user_table
+from config.database import get_connection
+from models.user_model import create_user_table
 
-from backend.routes.auth_routes import auth_bp
-from backend.routes.user_routes import user_bp
+from routes.auth_routes import auth_bp
+from routes.user_routes import user_bp
 
-from backend.models.people_model import create_people_table
+from models.people_model import create_people_table
 
-from backend.routes.people_routes import people_bp
+from routes.people_routes import people_bp
 
-from backend.models.transaction_model import create_transaction_table
+from models.transaction_model import create_transaction_table
 
-from backend.routes.transaction_routes import transaction_bp
+from routes.transaction_routes import transaction_bp
 
-from backend.routes.dashboard_routes import dashboard_bp
+from routes.dashboard_routes import dashboard_bp
 
-from backend.routes.report_routes import report_bp
+from routes.report_routes import report_bp
 
-from backend.routes.backup_routes import backup_bp
+from routes.backup_routes import backup_bp
 
-from backend.routes.search_routes import search_bp
+from routes.search_routes import search_bp
 
 from routes.health_routes import health_bp
 
