@@ -29,13 +29,13 @@ function Dashboard() {
             .then(data => setSummary(data));
 
         fetch(
-            "http://127.0.0.1:5000/dashboard-alerts"
+            `${import.meta.env.VITE_API_URL}/dashboard-alerts`
         )
             .then(response => response.json())
             .then(data => setAlerts(data));
 
         fetch(
-            "http://127.0.0.1:5000/top-debtors"
+            `${import.meta.env.VITE_API_URL}/top-debtors`
         )
             .then(response => response.json())
             .then(data => setDebtors(data));
