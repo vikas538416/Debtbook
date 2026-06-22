@@ -6,13 +6,8 @@ def create_transaction_table(conn):
         """
         CREATE TABLE IF NOT EXISTS transactions(
 
-<<<<<<< HEAD
             id SERIAL
-            PRIMARY KEY ,
-=======
-            id INTEGER
-            PRIMARY KEY AUTOINCREMENT,
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
+            PRIMARY KEY,
 
             person_id INTEGER
             NOT NULL,
