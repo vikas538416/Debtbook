@@ -4,29 +4,29 @@ import os
 from flask import Flask
 from flask_cors import CORS
 
-from Debtbook.backend.routes.health_routes import health_bp
+from backend.routes.health_routes import health_bp
 
-from Debtbook.backend.config.database import get_connection
-from Debtbook.backend.models.user_model import create_user_table
+from backend.config.database import get_connection
+from backend.models.user_model import create_user_table
 
-from Debtbook.backend.routes.auth_routes import auth_bp
-from Debtbook.backend.routes.user_routes import user_bp
+from backend.routes.auth_routes import auth_bp
+from backend.routes.user_routes import user_bp
 
-from Debtbook.backend.models.people_model import create_people_table
+from backend.models.people_model import create_people_table
 
-from Debtbook.backend.routes.people_routes import people_bp
+from backend.routes.people_routes import people_bp
 
-from Debtbook.backend.models.transaction_model import create_transaction_table
+from backend.models.transaction_model import create_transaction_table
 
-from Debtbook.backend.routes.transaction_routes import transaction_bp
+from backend.routes.transaction_routes import transaction_bp
 
-from Debtbook.backend.routes.dashboard_routes import dashboard_bp
+from backend.routes.dashboard_routes import dashboard_bp
 
-from Debtbook.backend.routes.report_routes import report_bp
+from backend.routes.report_routes import report_bp
 
-from Debtbook.backend.routes.backup_routes import backup_bp
+from backend.routes.backup_routes import backup_bp
 
-from Debtbook.backend.routes.search_routes import search_bp
+from backend.routes.search_routes import search_bp
 
 from routes.health_routes import health_bp
 
