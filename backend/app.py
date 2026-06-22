@@ -1,0 +1,76 @@
+from dotenv import load_dotenv
+import os
+
+from flask import Flask
+from flask_cors import CORS
+
+from Debtbook.backend.routes.health_routes import health_bp
+
+from Debtbook.backend.config.database import get_connection
+from Debtbook.backend.models.user_model import create_user_table
+
+from Debtbook.backend.routes.auth_routes import auth_bp
+from Debtbook.backend.routes.user_routes import user_bp
+
+from Debtbook.backend.models.people_model import create_people_table
+
+from Debtbook.backend.routes.people_routes import people_bp
+
+from Debtbook.backend.models.transaction_model import create_transaction_table
+
+from Debtbook.backend.routes.transaction_routes import transaction_bp
+
+from Debtbook.backend.routes.dashboard_routes import dashboard_bp
+
+from Debtbook.backend.routes.report_routes import report_bp
+
+from Debtbook.backend.routes.backup_routes import backup_bp
+
+from Debtbook.backend.routes.search_routes import search_bp
+
+conn = get_connection()
+create_user_table(conn)
+
+create_people_table(conn)
+
+create_transaction_table(conn)
+
+
+
+conn.close()
+
+app = Flask(__name__)
+
+CORS(app)
+
+app.register_blueprint(health_bp)
+
+app.register_blueprint(auth_bp)
+
+app.register_blueprint(user_bp)
+
+app.register_blueprint(people_bp)
+
+app.register_blueprint(transaction_bp)
+
+app.register_blueprint( dashboard_bp)
+
+app.register_blueprint(backup_bp)
+
+app.register_blueprint(report_bp)
+
+app.register_blueprint(search_bp)
+
+
+
+
+load_dotenv()
+DATABASE_URL = os.getenv("DATABASE_URL")
+print(DATABASE_URL)
+
+
+if __name__ == "__main__":
+    app.run(
+        host = "0.0.0.0",
+        port=5000
+    )
