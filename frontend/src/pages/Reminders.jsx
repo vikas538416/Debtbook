@@ -1,11 +1,10 @@
-<<<<<<< HEAD
-import { useEffect,useState} from "react";
+]import { useEffect,useState} from "react";
 
 function Reminders() {
     const [reminders,setReminders] = useState([]);
     useEffect(() => {
         fetch(
-            "http://127.0.0.1:5000/reminders"
+            `${import.meta.env.VITE_API_URL}/reminders`
         )
         .then(response =>response.json())
         .then(data =>setReminders(data));
@@ -24,7 +23,6 @@ function Reminders() {
         </div>
     );
 }
-=======
 import {
     useEffect,
     useState
@@ -40,7 +38,7 @@ function Reminders() {
     useEffect(() => {
 
         fetch(
-            "http://127.0.0.1:5000/reminders"
+            `${import.meta.env.VITE_API_URL}/reminders`
         )
 
             .then(
@@ -117,5 +115,4 @@ function Reminders() {
 
 }
 
->>>>>>> 61108bc051646086413a5603c7e795890ca47c7e
 export default Reminders;
