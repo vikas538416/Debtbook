@@ -27,7 +27,11 @@ function Register() {
             alert(data.message);
 
             if (data.success) {
+                alert("Registration successful. Please login.");
                 window.location.href = "/login";
+            }
+            else {
+                alert(data.message);
             }
         } catch (error) {
             console.log(error);
