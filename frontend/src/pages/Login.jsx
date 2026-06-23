@@ -22,6 +22,11 @@ function Login() {
 
             const data = await response.json();
 
+            if (response.status === 404) {
+                alert("User not found. Please register first.");
+                window.location.href = "/register";
+                return;
+            }
             if (data.success) {
                 localStorage.setItem("token", data.token);
                 window.location.href = "/dashboard";
