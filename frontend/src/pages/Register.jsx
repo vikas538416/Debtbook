@@ -30,6 +30,7 @@ function Register() {
             const data = await response.json();
 
             if (data.success) {
+<<<<<<< HEAD
 
                 alert(
                     "Registration Successful"
@@ -46,6 +47,14 @@ function Register() {
 
             }
 
+=======
+                alert("Registration successful. Please login.");
+                window.location.href = "/login";
+            }
+            else {
+                alert(data.message);
+            }
+>>>>>>> 41ff95196e81a3b353e6bec5f3a3819a7515420b
         } catch (error) {
 
             console.log(error);

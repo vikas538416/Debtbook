@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -21,6 +20,10 @@ function Login() {
             );
 
             const data = await response.json();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 41ff95196e81a3b353e6bec5f3a3819a7515420b
             if (response.status === 404) {
                 alert("User not found. Please register first.");
                 window.location.href = "/register";
