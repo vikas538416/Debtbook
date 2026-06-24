@@ -1,4 +1,4 @@
-from Debtbook.backend.config.database import get_connection
+from config.database import get_connection
 
 conn = get_connection()
 

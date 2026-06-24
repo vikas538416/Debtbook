@@ -16,14 +16,35 @@ import Backup from "../pages/Backup";
 
 import Reminders from "../pages/Reminders";
 
+import LandingPage from "../pages/LandingPage";
+
+import Features from "../components/Features";
+
+import Pricing from "../components/Pricing";
+
+import About from "../components/About";
+
+import Blog from "../components/Blog";
+
 function AppRoutes() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route
     path="/"
-    element={<Navigate to="/login" />}
-/>
+    element={<LandingPage />}
+/>              <Route
+                    path = "/features"
+                    element={<Features/>}/>
+                <Route
+                    path = "/about"
+                    element={<About/>}/>
+                <Route
+                    path = "/pricing"
+                    element={<Pricing/>}/>
+                <Route
+                    path = "/blog"
+                    element={<Blog/>}/>
                 <Route
                     path="/register"
                     element={<Register />}/>

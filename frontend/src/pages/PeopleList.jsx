@@ -8,7 +8,7 @@ function PeopleList() {
 
     useEffect(() => {
         fetch(
-            `${import.meta.env.VITE_API_URL}/search?query=${search}`
+            "http://127.0.0.1:5000/search?query=${search}"
         )
             .then((response) => response.json())
             .then((data) => setPeople(data))

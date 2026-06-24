@@ -16,7 +16,7 @@ function Backup() {
     const restoreBackup = async () => {
         try {
             const response = await fetch(
-                `${import.meta.env.VITE_API_URL}/restore`
+                "http://127.0.0.1:5000/restore"
             );
 
             await response.json();

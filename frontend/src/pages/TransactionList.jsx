@@ -16,7 +16,7 @@ function TransactionList({ personId }) {
 
     useEffect(() => {
         fetch(
-            `${import.meta.env.VITE_API_URL}/transactions/${personId}`
+            "http://127.0.0.1:5000/transactions/${personId}"
         )
             .then((response) => response.json())
             .then((data) => setTransactions(data))

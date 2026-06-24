@@ -14,15 +14,15 @@ function Dashboard() {
     const [debtors, setDebtors] = useState([]);
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/dashboard-summary`)
+        fetch("http://127.0.0.1:5000/dashboard-summary")
             .then((response) => response.json())
             .then((data) => setSummary(data));
 
-        fetch(`${import.meta.env.VITE_API_URL}/dashboard-alerts`)
+        fetch("http://127.0.0.1:5000/dashboard-alerts")
             .then((response) => response.json())
             .then((data) => setAlerts(data));
 
-        fetch(`${import.meta.env.VITE_API_URL}/top-debtors`)
+        fetch("http://127.0.0.1:5000/top-debtors")
             .then((response) => response.json())
             .then((data) => setDebtors(data));
     }, []);

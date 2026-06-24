@@ -8,11 +8,12 @@ auth_bp = Blueprint("auth", __name__)
 
 @auth_bp.route("/register", methods=["POST"])
 def register():
-    data = request.get_json()
+    data = request.json
 
     name = data["name"]
     email = data["email"]
     password = data["password"]
+    phone = data["phone"]
 
     hashed_password = bcrypt.hashpw(
         password.encode("utf-8"),
@@ -25,10 +26,10 @@ def register():
     try:
         cursor.execute(
             """
-            INSERT INTO users(name, email, password)
-            VALUES(%s, %s, %s)
+            INSERT INTO users(name, email,password,phone)
+            VALUES(%s, %s, %s,%s)
             """,
-            (name, email, hashed_password)
+            (name, email, hashed_password,phone)
         )
 
         conn.commit()
@@ -52,7 +53,7 @@ def register():
 
 @auth_bp.route("/login", methods=["POST"])
 def login():
-    data = request.get_json()
+    data = request.json
 
     email = data["email"]
     password = data["password"]

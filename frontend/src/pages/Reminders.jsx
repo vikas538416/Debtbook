@@ -4,7 +4,7 @@ function Reminders() {
     const [reminders, setReminders] = useState([]);
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/reminders`)
+        fetch("http://127.0.0.1:5000/reminders")
             .then((response) => response.json())
             .then((data) => setReminders(data))
             .catch((error) => console.error(error));
